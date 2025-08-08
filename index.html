@@ -24,7 +24,8 @@
   </div>
 
   <div id="gamble-screen" style="display: none;">
-    <input id="bet-amount" type="number" placeholder="Enter amount to gamble">
+    <input class="bet-amount-selector" id="bet-amount" type="number" placeholder="Enter amount to gamble" style="display: inline-block;">
+    <button class="all-in" onclick="allIn()">All In</button>
     <p class="rouletteGuide">Bet on Red, Black, or a number (1-36)</p>
     <input class="bet-choice" id="bet-choice" type="text" placeholder="What are you betting on?">
     <p id="gambleResult" class="gammbleResult"></p>
@@ -58,5 +59,6 @@
   <script src="script/display.js"></script>
   <script src="script/player.js"></script>
   <script src="script/items.js"></script>
+  <script src="script/gamble--roulette.js"></script>
 </body>
 </html>

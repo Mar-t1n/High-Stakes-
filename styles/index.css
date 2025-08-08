@@ -24,3 +24,10 @@
     width: 100%;
 
 }
+
+button{
+    cursor:pointer;
+}
+.gamble-menu{
+    cursor:pointer;
+}
