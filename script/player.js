@@ -1,7 +1,10 @@
 // Global player object
 let player = {
   name: '',
-  money: 0
+  money: 0,
+  inventory: {
+    items: {}
+  }
 };
 
 // Load player from localStorage if exists

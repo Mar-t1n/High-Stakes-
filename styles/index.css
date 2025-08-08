@@ -1,0 +1,26 @@
+.flow-buttons {
+    background-color: #1d74c5; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+
+}
+.gamble-menu {
+    height:100px;
+    width:200px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.flow-buttons-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+
+}

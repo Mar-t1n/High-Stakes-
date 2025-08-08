@@ -32,8 +32,8 @@ function Gamble() {
     25: 'red', 26: 'black', 27: 'red', 28: 'black', 29: 'black', 30: 'red',
     31: 'black', 32: 'red', 33: 'black', 34: 'red', 35: 'black', 36: 'red'
   };
-  
-  const rolledNumber = Math.floor(Math.random() * 36) + 1;
+
+  const rolledNumber =   Math.floor(Math.random() * 36) + 1;
   const rolledColor = rouletteTable[rolledNumber];
 
   let win = false;
@@ -85,9 +85,10 @@ function checkOut() {
   cartList = {};
   console.log(inventory);
 
+  if (inventory.tymur && inventory.tymur.quantity > 0) {
+  multiplier = multiplier*3* inventory.tymur.quantity;
+  }
+ 
   document.querySelector('.cart-amount').innerHTML = cartAmount;
   updateMoneyDisplay();
-}
-if (inventory.tymur && inventory.tymur.quantity > 0) {
-  multiplier = multiplier*3* inventory.tymur.quantity;
 }
