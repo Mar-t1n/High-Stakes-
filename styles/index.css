@@ -1,16 +1,25 @@
-.flow-buttons {
-    background-color: #1d74c5; /* Green */
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-
+.flow-buttons{
+  background: #fbca1f;
+  font-family: Helvetica;
+  padding: 0.6em 1.3em;
+  font-weight: 900;
+  font-size: 18px;
+  border: 3px solid black;
+  border-radius: 0.4em;
+  box-shadow: 0.1em 0.1em;
+  cursor: pointer;
 }
+
+.flow-buttons:hover {
+  transform: translate(-0.05em, -0.05em);
+  box-shadow: 0.15em 0.15em;
+}
+
+.flow-buttons:active {
+  transform: translate(0.05em, 0.05em);
+  box-shadow: 0.05em 0.05em;
+}
+
 .gamble-menu {
     height:100px;
     width:200px;
@@ -29,5 +38,5 @@ button{
     cursor:pointer;
 }
 .gamble-menu{
-    cursor:pointer;
+    cursor:pointer
 }

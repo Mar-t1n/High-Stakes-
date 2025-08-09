@@ -1,4 +1,4 @@
-// Global player object
+
 let player = {
   name: '',
   money: 0,

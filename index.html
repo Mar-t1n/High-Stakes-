@@ -6,6 +6,10 @@
   <title>High Stakes!</title>
   <link rel="stylesheet" href="styles/index.css"/>
   <link rel="stylesheet" href="styles/items.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap" rel="stylesheet">
+
 </head>
 <body>
 
@@ -18,20 +22,13 @@
     <p id="money-display"></p>
     <div class="flow-buttons-container">
       <button class="flow-buttons" onclick="increaseMoney()">Get Money</button>
-      <img class="gamble-menu" onclick="gambleDisplay()" src="items/gamble-menu.png">
+      <a href="roulette-table.html">
+        <img class="gamble-menu" src="items/gamble-menu.png">
+      </a>
       <button class="flow-buttons" onClick="itemShop()">Item Shop</button>
     </div>
   </div>
 
-  <div id="gamble-screen" style="display: none;">
-    <input class="bet-amount-selector" id="bet-amount" type="number" placeholder="Enter amount to gamble" style="display: inline-block;">
-    <button class="all-in" onclick="allIn()">All In</button>
-    <p class="rouletteGuide">Bet on Red, Black, or a number (1-36)</p>
-    <input class="bet-choice" id="bet-choice" type="text" placeholder="What are you betting on?">
-    <p id="gambleResult" class="gammbleResult"></p>
-    <button onclick="Gamble()">Gamble</button>
-    <button class="flow-buttons" onclick="backToGame()">Back to Game</button>
-  </div>
 
   <div id="item-shop-screen" style="display:none">
     <div class=" cart-section">
@@ -59,6 +56,6 @@
   <script src="script/display.js"></script>
   <script src="script/player.js"></script>
   <script src="script/items.js"></script>
-  <script src="script/gamble--roulette.js"></script>
+  <script src="script/gamble-roulette.js"></script>
 </body>
 </html>
