@@ -1,42 +1,169 @@
-.flow-buttons{
-  background: #fbca1f;
-  font-family: Helvetica;
-  padding: 0.6em 1.3em;
-  font-weight: 900;
-  font-size: 18px;
-  border: 3px solid black;
-  border-radius: 0.4em;
-  box-shadow: 0.1em 0.1em;
-  cursor: pointer;
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0a4d2e 0%, #1a7a47 100%);
+    font-family: 'Helvetica', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Main Layout */
+#game-screen {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+}
+
+.header-row {
+    width: 90%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    margin: 0 auto 40px auto;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* Container for the main content */
+.main-container {
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    position: relative;
+}
+
+/* Money display styling */
+#money-display {
+    text-align: center;
+    font-size: 48px;
+    font-weight: 900;
+    color: #fbca1f;
+    text-shadow: 3px 3px 0px rgba(0,0,0,0.2);
+    margin: 0 0 30px 0;
+    padding: 20px;
+    background: rgba(0,0,0,0.2);
+    border-radius: 15px;
+    border: 3px solid #fbca1f;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        box-shadow: 0 0 10px rgba(251, 202, 31, 0.2);
+    }
+    to {
+        box-shadow: 0 0 20px rgba(251, 202, 31, 0.5);
+    }
+}
+
+/* Button container */
+.flow-buttons-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Common button styles */
+.flow-buttons {
+    background: #fbca1f;
+    font-family: Helvetica;
+    padding: 0.8em 1.6em;
+    font-weight: 900;
+    font-size: 20px;
+    border: 3px solid black;
+    border-radius: 0.4em;
+    box-shadow: 0.2em 0.2em 0 black;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    width: 250px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
 }
 
 .flow-buttons:hover {
-  transform: translate(-0.05em, -0.05em);
-  box-shadow: 0.15em 0.15em;
+    transform: translate(-0.05em, -0.05em);
+    box-shadow: 0.25em 0.25em 0 black;
+    background: #ffd700;
 }
 
 .flow-buttons:active {
-  transform: translate(0.05em, 0.05em);
-  box-shadow: 0.05em 0.05em;
+    transform: translate(0.05em, 0.05em);
+    box-shadow: 0.05em 0.05em 0 black;
 }
 
-.gamble-menu {
-    height:100px;
-    width:200px;
-    margin-left: 20px;
-    margin-right: 20px;
-}
-.flow-buttons-container{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: 100%;
-
+/* Top navigation buttons */
+#shop-button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: auto;
+    background: #ff6b6b;
+    border-color: #444;
+    z-index: 100;
 }
 
-button{
-    cursor:pointer;
+#shop-button:hover {
+    background: #ff8787;
 }
-.gamble-menu{
-    cursor:pointer
+
+.main-image {
+    height: 160px;
+    width: auto;
+}
+
+.gamble-menu, .shop-menu-icon {
+    height: 130px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.gamble-menu:hover, .shop-menu-icon:hover {
+    transform: scale(1.1);
+}
+
+/* Get money button specific styling */
+#get-money {
+    background: linear-gradient(45deg, #28a745, #20c997);
+    border-color: #1e7e34;
+    color: white;
+    margin-top: 20px;
+}
+
+
+
+/* Button shine effect */
+.flow-buttons::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        rgba(255,255,255,0.2),
+        rgba(255,255,255,0.05)
+    );
+    transform: rotate(45deg);
+    transition: all 0.3s ease;
+    opacity: 0;
+}
+
+.flow-buttons:hover::after {
+    opacity: 1;
 }

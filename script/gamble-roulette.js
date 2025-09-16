@@ -1,7 +1,12 @@
-let balance = player.money;
+// Initialize game variables
 let selectedChip = 1;
 let bets = {};
 let totalBetAmount = 0;
+
+// Make sure player object exists
+if (typeof player === 'undefined') {
+    console.error('Player object not found! Make sure to load script.js first');
+}
 const redNumbers = [1, 3, 5, 7, 9, 12, 14, 16, 18, 19, 21, 23, 25, 27, 30, 32, 34, 36];
 
 // Chip selection   
@@ -34,9 +39,9 @@ document.querySelectorAll('[data-number], [data-bet]').forEach(cell => {
 });
 
 function placeBet(cell) {
-            const betAmount = selectedChip === 'allin' ? balance : selectedChip;
+            const betAmount = selectedChip === 'allin' ? player.money : selectedChip;
             
-            if (balance < betAmount) {
+            if (player.money < betAmount) {
                 alert('Insufficient balance!');
                 return;
             }
@@ -49,8 +54,9 @@ function placeBet(cell) {
             }
 
             bets[betKey].amount += betAmount;
-            balance -= betAmount;
+            player.money -= betAmount;
             totalBetAmount += betAmount;
+            savePlayer(); // Save player's money after placing bet
 
             updateDisplay();
             updateBetChip(cell, bets[betKey].amount);
@@ -81,9 +87,10 @@ function getChipColor(amount) {
 }
 
 function updateDisplay() {
-    document.getElementById('balance').textContent = balance;
+    document.getElementById('balance').textContent = player.money;
     document.getElementById('totalBet').textContent = totalBetAmount;
     updateBetList();
+    updateMoneyDisplay(); // Update the main game's money display
 }
 
 function updateBetList() {
@@ -110,7 +117,8 @@ function updateBetList() {
 
 function clearBets(returnMoney = true) {
     if (returnMoney) {
-        balance += totalBetAmount;
+        player.money += totalBetAmount;
+        savePlayer(); // Save player's money when returning bets
     }
     bets = {};
     totalBetAmount = 0;
@@ -148,7 +156,8 @@ function spin() {
         }
     });
 
-    balance += totalWinnings;
+    player.money += totalWinnings;
+    savePlayer(); // Save player's money after adding winnings
     
     if (totalWinnings > 0) {
         setTimeout(() => alert(`You won $${totalWinnings}!`), 500);

@@ -15,10 +15,7 @@ function backToGame() {
     document.getElementById('item-shop-screen').style.display = 'none';
     document.getElementById('cart-screen').style.display = 'none';
 }
-function itemShop() {
-    document.getElementById('game-screen').style.display = 'none';
-    document.getElementById('item-shop-screen').style.display = 'block';
-}
+
 function cart() {
   console.log('Cart button clicked');
   document.getElementById('item-shop-screen').style.display = 'none';

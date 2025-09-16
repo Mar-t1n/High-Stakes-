@@ -19,37 +19,22 @@
   </div>
 
   <div id="game-screen" style="display: none;">
-    <p id="money-display"></p>
-    <div class="flow-buttons-container">
-      <button class="flow-buttons" onclick="increaseMoney()">Get Money</button>
+    <div class="header-row">
       <a href="roulette-table.html">
-        <img class="gamble-menu" src="items/gamble-menu.png">
+         <img src="symbols/gamblemenu.png" class="gamble-menu">
       </a>
-      <button class="flow-buttons" onClick="itemShop()">Item Shop</button>
+      <img src="symbols/mainimg.png" class="main-image">
+      <a href="item-shop.html">
+         <img src="symbols/itemshop.png" class="shop-menu-icon">
+      </a>
+    </div>
+
+    <div class="main-content">
+      <p id="money-display"></p>
+      <button class="flow-buttons" onclick="increaseMoney()">Get Money</button>
     </div>
   </div>
 
-
-  <div id="item-shop-screen" style="display:none">
-    <div class=" cart-section">
-        <img src="symbols/shoppingcart.svg" class="cart-icon" onclick="cart()" alt="Shopping Cart">
-        <div class="cart-amount">0</div>
-    </div>
-    <div id="tymur" class="sigma-item"><!-- start-div -->
-        <img class="item" src="items/tymur.png">
-        <div class="multiplier">3x multiplier</div>
-        <div class="details">
-            <button class="add-to-cart" onclick="updateCartAmount('tymur',300)">Add to Cart</button>
-        </div>
-    </div><!-- end-div -->
-  </div>
-
-  <div id ="cart-screen" style="display:none">
-    <div class="cart-header">
-      <h2>Shopping Cart</h2>
-      <button class="checkout-button flow-buttons" onclick="checkOut()">Checkout</button>
-      <button class="flow-buttons" onclick="backToGame()">Back To Game</button>
-  </div>
 
 
   <script src="script/script.js"></script>
